@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9767963-d974-481b-8634-d3c70af9a0c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TreeHouse" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,12 +54,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/employee-directory/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="scratch.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Node.js.scratch.js" />
       </list>
     </recent_temporary>
@@ -73,6 +78,12 @@
       <updated>1606097604826</updated>
       <workItem from="1606097605943" duration="3923000" />
       <workItem from="1606201036905" duration="1566000" />
+      <workItem from="1606790679795" duration="104000" />
+      <workItem from="1606790795507" duration="6000" />
+      <workItem from="1606790816907" duration="32000" />
+      <workItem from="1607376921181" duration="599000" />
+      <workItem from="1607382916778" duration="20000" />
+      <workItem from="1607383919600" duration="3088000" />
     </task>
     <servers />
   </component>
@@ -95,10 +106,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="136" key="FileChooserDialogImpl" timestamp="1606100324138">
+    <state x="421" y="136" key="FileChooserDialogImpl" timestamp="1607382934646">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="421" y="136" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1606100324138" />
+    <state x="421" y="136" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1607382934646" />
     <state width="1259" height="190" key="GridCell.Tab.0.bottom" timestamp="1606204686401">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
