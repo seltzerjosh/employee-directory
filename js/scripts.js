@@ -30,7 +30,7 @@ function generateProfile(employee) {
     const cardInfoContainer = document.createElement('div');
     cardInfoContainer.className = 'card-info-container';
     const h3 = document.createElement('h3');
-    h3.id =
+    h3.id = employee
 
     const gallery = document.getElementById('gallery');
     gallery.appendChild(card);
