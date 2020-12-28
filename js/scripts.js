@@ -50,7 +50,7 @@ function generateProfile(employee) {
     cardInfoContainer.appendChild(p2);
 
     const gallery = document.getElementById('gallery');
-    gallery.appendChild(card);)
+    gallery.appendChild(card);
 }
 
 function generateModal() {
