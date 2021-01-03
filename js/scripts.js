@@ -7,14 +7,17 @@ function fetchData(url) {
 fetchData("https://randomuser.me/api/?results=12")
     .then(data => generateProfiles(data))
     .catch(error => console.log("Problem: ", error));
- 
+
+const results = [];
+
 function generateProfiles(employeeList) {
     console.log(employeeList);
     employeeList.results
         .forEach(data => generateProfile(data));
     employeeList.results
-        .forEach(data => generateModal(data));
-}
+        .forEach(data => results.push(data));
+
+};
 
 function generateProfile(employee) {
 
@@ -52,21 +55,25 @@ function generateProfile(employee) {
 
     const gallery = document.getElementById('gallery');
     gallery.appendChild(card);
-}
+};
 
-function generateModal() {
+function generateModal(employee) {
     const modal = document.createElement('div');
-    modal.class = 'modal';
+    modal.classList.add('modal-container');
+
+    const modalContainer = document.createElement('div');
+    modalContainer.classList.add('modal');
+    modal.appendChild(modalContainer);
 
     const closeButton = document.createElement('button');
     closeButton.type = 'button';
     closeButton.id = 'modal-close-btn';
-    closeButton.class = 'modal-close-btn';
+    closeButton.classList.add('modal-close-btn');;
     closeButton.innerHTML = '<strong>X</strong>';
-    modal.appendChild(closeButton);
+    modalContainer.appendChild(closeButton);
 
     const modalInfoContainer = document.createElement('div');
-    modal.appendChild(modalInfoContainer);
+    modalContainer.appendChild(modalInfoContainer);
 
     const modalImg = document.createElement('div');
     modalImg.class = 'modal-img';
@@ -107,13 +114,17 @@ function generateModal() {
     modalEmail.class = 'modal-text';
     modalEmail.textContent = 'birthdayPlaceholder';
     modalInfoContainer.appendChild(modalBirthday);
-}
 
+    document.body.appendChild(modal);
+};
 
-/*
+document.addEventListener('DOMContentLoaded', (event) => {
+    const gallery = document.getElementById('gallery');
+    gallery.addEventListener('click', (event) => {
+        const modal = generateModal(results[0]);
+    });
+})
 
-submit.addEventListener('click', (event) => {
-    event.preventDefault();
-    showPage(performSearch(search, data), 1);
-    pagination(performSearch(search, data));
-})*/
+document.addEventListener('click', (event) => {
+    console.log(event.target.className);
+    });

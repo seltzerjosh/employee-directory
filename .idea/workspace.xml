@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9767963-d974-481b-8634-d3c70af9a0c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/TODO/TODO.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +80,9 @@
       <workItem from="1609185391407" duration="5453000" />
       <workItem from="1609638488856" duration="2278000" />
       <workItem from="1609651262867" duration="252000" />
+      <workItem from="1609704754264" duration="478000" />
+      <workItem from="1609705290838" duration="480000" />
+      <workItem from="1609705861850" duration="5933000" />
     </task>
     <servers />
   </component>
@@ -98,28 +103,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="632" y="186" key="FileChooserDialogImpl" timestamp="1609639170410">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="421" y="136" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1606100324138" />
-    <state x="632" y="186" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609639170410" />
-    <state width="1259" height="190" key="GridCell.Tab.0.bottom" timestamp="1606204686401">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1259" height="190" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1606204686401" />
-    <state width="1259" height="190" key="GridCell.Tab.0.center" timestamp="1606204686401">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1259" height="190" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1606204686401" />
-    <state width="1259" height="190" key="GridCell.Tab.0.left" timestamp="1606204686401">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1259" height="190" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1606204686401" />
-    <state width="1259" height="190" key="GridCell.Tab.0.right" timestamp="1606204686401">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="1259" height="190" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1606204686401" />
   </component>
 </project>
