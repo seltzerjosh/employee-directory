@@ -7,13 +7,12 @@ function fetchData(url) {
 fetchData("https://randomuser.me/api/?results=12")
     .then(data => generateProfiles(data))
     .catch(error => console.log("Problem: ", error));
-
-//
-
+ 
 function generateProfiles(employeeList) {
     console.log(employeeList);
     employeeList.results
-        .forEach(data => generateProfile(data))
+        .forEach(data => generateProfile(data));
+    employeeList.results
         .forEach(data => generateModal(data));
 }
 
@@ -75,12 +74,11 @@ function generateModal() {
     modalImg.alt = 'profile picture';
     modalInfoContainer.appendChild(modalImg);
 
-    const modalName = document.createElement(0'h3');
+    const modalName = document.createElement('h3');
     modalName.id = 'namePlaceHolder';
     modalName.class = "modal-name cap"
     modalName.textContent = 'namePlaceholder';
     modalInfoContainer.appendChild(modalName);
-
 
     const modalEmail = document.createElement('p');
     modalEmail.class = 'modal-text';
@@ -111,18 +109,11 @@ function generateModal() {
     modalInfoContainer.appendChild(modalBirthday);
 }
 
-/* <div class="modal-container">
-                <div class="modal">
-                    <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
-                    <div class="modal-info-container">
-                        <img class="modal-img" src="https://placehold.it/125x125" alt="profile picture">
-                        <h3 id="name" class="modal-name cap">name</h3>
-                        <p class="modal-text">email</p>
-                        <p class="modal-text cap">city</p>
-                        <hr>
-                        <p class="modal-text">(555) 555-5555</p>
-                        <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
-                        <p class="modal-text">Birthday: 10/21/2015</p>
-                    </div>
-                </div>
-                */
+
+/*
+
+submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    showPage(performSearch(search, data), 1);
+    pagination(performSearch(search, data));
+})*/
