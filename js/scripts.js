@@ -1,15 +1,28 @@
+/**
+ * Creates token objects for player
+ * @param   {integer}   num - Number of token objects to be created
+ * @return  {array}     tokens - an arary of new token objects
+ */
 function fetchData(url) {
     return fetch(url)
         .then(res => res.json())
         .catch(error => console.log("Problem: ", error));
 }
-
+/**
+ * Fetches data from api and logs issues to console
+ * @param   {url}   link to api
+ */
 fetchData("https://randomuser.me/api/?results=12")
     .then(data => generateProfiles(data))
     .catch(error => console.log("Problem: ", error));
 
+//empty array for results to fill into
 const results = [];
 
+/**
+ * Generates profiles from api fetch utilizing generateProfile function
+ * @param   {object}   rseults from fetch
+ */
 function generateProfiles(employeeList) {
     console.log(employeeList);
     employeeList.results
@@ -19,11 +32,20 @@ function generateProfiles(employeeList) {
 
 }
 
+/**
+ * Quick function to format the telephones using prescribed (xxx) xxx-xxxx formatting
+ * @param   {text}  Raw phone number
+ * @return  {text} Formatted phone number
+ */
 function formatTelephone(text) {
     const expression = /^\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*$/;
     return text.replace(expression, "($1) $2-$3");
 }
 
+/**
+ * Generates DOM for profile and adds to DOM tree
+ * @param   {emplyoee}  Employee information contained in an object to inject into DOM
+ */
 function generateProfile(employee) {
 
     const card = document.createElement('div');
@@ -128,6 +150,9 @@ function generateModal(employee) {
     document.body.appendChild(modal);
 };
 
+/**
+ * Creates event listener to create modals
+ */
 document.addEventListener('DOMContentLoaded', (event) => {
     const gallery = document.getElementById('gallery');
     const buttons = document.getElementsByClassName('card');
@@ -145,7 +170,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     })
 });
-
+/**
+ * Creates event listener that closes modals
+ */
 document.addEventListener('click', (event) => {
     if (document.getElementById('modal-close-btn') === event.target) {
         const modal = document.getElementsByClassName('modal-container');
