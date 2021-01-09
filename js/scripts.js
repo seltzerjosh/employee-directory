@@ -17,7 +17,12 @@ function generateProfiles(employeeList) {
     employeeList.results
         .forEach(data => results.push(data));
 
-};
+}
+
+function formatTelephone(text) {
+    const expression = /^\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*$/;
+    return text.replace(expression, "($1) $2-$3");
+}
 
 function generateProfile(employee) {
 
@@ -50,12 +55,12 @@ function generateProfile(employee) {
 
     const p2 = document.createElement('p');
     p2.class = 'card-text cap';
-    p2.insertAdjacentHTML('beforeend', `${employee.location.city}, ${employee.location.state}`)
+    p2.insertAdjacentHTML('beforeend', employee.location.city)
     cardInfoContainer.appendChild(p2);
 
     const gallery = document.getElementById('gallery');
     gallery.appendChild(card);
-};
+}
 
 function generateModal(employee) {
     const modal = document.createElement('div');
@@ -68,51 +73,56 @@ function generateModal(employee) {
     const closeButton = document.createElement('button');
     closeButton.type = 'button';
     closeButton.id = 'modal-close-btn';
-    closeButton.classList.add('modal-close-btn');;
+    closeButton.classList.add('modal-close-btn');
     closeButton.innerHTML = '<strong>X</strong>';
     modalContainer.appendChild(closeButton);
 
     const modalInfoContainer = document.createElement('div');
+    modalInfoContainer.classList.add('modal-info-container');
     modalContainer.appendChild(modalInfoContainer);
 
-    const modalImg = document.createElement('div');
-    modalImg.class = 'modal-img';
-    modalImg.src = 'https://placehold.it/125x125';
+    const modalImg = document.createElement('img');
+    modalImg.classList.add('modal-img');
+    modalImg.src = employee.picture.medium;
     modalImg.alt = 'profile picture';
     modalInfoContainer.appendChild(modalImg);
 
     const modalName = document.createElement('h3');
     modalName.id = 'namePlaceHolder';
-    modalName.class = "modal-name cap"
-    modalName.textContent = 'namePlaceholder';
+    modalName.classList.add("modal-name");
+    modalName.classList.add("cap");
+    modalName.textContent = employee.name.first + ' ' + employee.name.last;
     modalInfoContainer.appendChild(modalName);
 
     const modalEmail = document.createElement('p');
-    modalEmail.class = 'modal-text';
-    modalEmail.textContent = 'emailPlaceholder';
+    modalEmail.classList.add('modal-text');
+    modalEmail.textContent = employee.email;
     modalInfoContainer.appendChild(modalEmail);
 
     const modalCity = document.createElement('p');
-    modalEmail.class = 'modal-text cap';
-    modalEmail.textContent = 'cityPlaceholder';
+    modalCity.classList.add('modal-text');
+    modalCity.classList.add('cap');
+    modalCity.textContent = employee.location.city;
     modalInfoContainer.appendChild(modalCity);
 
     const hrModal = document.createElement('hr');
     modalInfoContainer.appendChild(hrModal);
 
     const modalPhone = document.createElement('p');
-    modalEmail.class = 'modal-text';
-    modalEmail.textContent = 'phonePlaceholder';
+    modalPhone.classList.add('modal-text');
+    modalPhone.textContent = formatTelephone(employee.phone);
     modalInfoContainer.appendChild(modalPhone);
 
     const modalAddress = document.createElement('p');
-    modalEmail.class = 'modal-text';
-    modalEmail.textContent = 'addressPlaceholder';
+    modalAddress.classList.add('modal-text');
+    let address =
+        `${employee.location.street.number} ${employee.location.street.name} ${employee.location.city} ${employee.location.state} ${employee.location.postcode}`
+    modalAddress.textContent = address;
     modalInfoContainer.appendChild(modalAddress);
 
     const modalBirthday = document.createElement('p');
-    modalEmail.class = 'modal-text';
-    modalEmail.textContent = 'birthdayPlaceholder';
+    modalBirthday.classList.add('modal-text');
+    modalBirthday.textContent = `Birthday: ${employee.dob.date.slice(5,7)}/${employee.dob.date.slice(8,10)}/${employee.dob.date.slice(0,4)}`;
     modalInfoContainer.appendChild(modalBirthday);
 
     document.body.appendChild(modal);
@@ -120,11 +130,29 @@ function generateModal(employee) {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const gallery = document.getElementById('gallery');
+    const buttons = document.getElementsByClassName('card');
     gallery.addEventListener('click', (event) => {
-        const modal = generateModal(results[0]);
-    });
-})
+        let ultimateTarget = event.target;
+        if (event.target.className !== 'gallery') {
+            while (ultimateTarget.className !== 'card') {
+                ultimateTarget = ultimateTarget.parentElement;
+            }
+            for (let i = 0; i < buttons.length; i++) {
+                if (ultimateTarget === buttons[i]) {
+                    generateModal(results[i]);
+                }
+            }
+        }
+    })
+});
 
 document.addEventListener('click', (event) => {
-    console.log(event.target.className);
-    });
+    if (document.getElementById('modal-close-btn') === event.target) {
+        const modal = document.getElementsByClassName('modal-container');
+        modal[0].remove();
+    }
+    if (document.getElementById('modal-close-btn') === event.target.parentElement) {
+        const modal = document.getElementsByClassName('modal-container');
+        modal[0].remove();
+    }
+});
