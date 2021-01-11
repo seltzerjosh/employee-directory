@@ -54,7 +54,7 @@ function generateProfile(employee) {
     const cardImgContainer = document.createElement('div');
     cardImgContainer.className = 'card-img-container';
     const img = document.createElement('img');
-    img.class = 'card-img';
+    img.className = 'card-img';
     img.src = employee.picture.medium;
     img.alt = 'profile pic';
     cardImgContainer.appendChild(img);
@@ -65,19 +65,21 @@ function generateProfile(employee) {
     card.appendChild(cardInfoContainer);
 
     const h3 = document.createElement('h3');
-    h3.id = employee.name.first + employee.name.last;
-    h3.class = 'card-name';
+    h3.id = "name";
+    h3.className = 'card-name';
+    h3.classList.add('cap');
     h3.insertAdjacentHTML('beforeend', `${employee.name.first} ${employee.name.last}`);
     cardInfoContainer.appendChild(h3);
 
     const p1 = document.createElement('p');
-    p1.class = 'card-text';
+    p1.className = 'card-text';
     p1.insertAdjacentHTML('beforeend', `${employee.email}`);
     cardInfoContainer.appendChild(p1);
 
     const p2 = document.createElement('p');
-    p2.class = 'card-text cap';
-    p2.insertAdjacentHTML('beforeend', employee.location.city)
+    p2.className = 'card-text';
+    p2.classList.add('cap');
+    p2.insertAdjacentHTML('beforeend', `${employee.location.city}, ${employee.location.state}`)
     cardInfoContainer.appendChild(p2);
 
     const gallery = document.getElementById('gallery');
